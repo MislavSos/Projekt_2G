@@ -12,7 +12,7 @@ int main()
     cout << "██        ██   ██   ██  ██    ██   ██   ██   ██   ██           ██" << endl;
     cout << "███████    █████    ██   ██    █████    ██████    ███████      ██" << endl;
         
-    int uplata = 0, koef, izbor, isplata tablica[10][3];
+    int uplata = 0, koef, izbor, isplata, tablica[10][3];
     cout<<"Kladite se odgovorno!  18+\n";
     cout<<"Cijena uplate je 50c.\n";
     cout<<"Izaberite ligu pomocu broja.\n";
@@ -82,7 +82,7 @@ int main()
                 dobitak, profit;
                 cout<<("\n");
                 cout<<("Molimo unesite redni broj utakmice na koju se želite kladiti.\n");
-                cin>>"%d">> &izbor_utk;
+                cin >> izbor_utk;
                 if (izbor_utk == 1)
                 {
                     cout<<"Odabrali ste utakmicu:\n%s vs %s\n"<< klub[0]<< klub[1];
@@ -129,11 +129,11 @@ int main()
                     cout<<("0\tIzjednaceno/nerjeseno: %.2f\n", koef0);
                     cout<<("2\t%s: %.2f\n\n", klub[1], koef2);
                     cout<<("Odaberite na sto se kladite pomocu prethodnih oznaka.\n");
-                    cin>>("%d", &kladjenje);
+                    cin >> kladjenje;
                     if (kladjenje == 1)
                     {
                         cout<<("Koliko uplacujete?\n");
-                        cin>>("%lf", &uplata);
+                        cin >> uplata;
                         srand(time(NULL));
                         gol1 = rand() % 4;
                         gol2 = rand() % 4;
@@ -153,7 +153,7 @@ int main()
                     else if (kladjenje == 0)
                     {
                         cout<<("Koliko uplacujete?\n");
-                        cin>>("%lf", &uplata);
+                        cin >> uplata;
                         srand(time(NULL));
                         gol1 = rand() % 4;
                         gol2 = rand() % 4;
@@ -173,7 +173,7 @@ int main()
                     else if (kladjenje == 2)
                     {
                         cout<<("Koliko uplacujete?\n");
-                        cin>>("%lf", &uplata);
+                        cin >> uplata;
                         srand(time(NULL));
                         gol1 = rand() % 4;
                         gol2 = rand() % 4;
