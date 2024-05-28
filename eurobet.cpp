@@ -125,9 +125,9 @@ int main()
                         } while (koef1 <= 2 || koef1 >= 7);
                     }
                     koef0 = (koef2 + koef1) / 2;
-                    cout<<("1\t%s: %.2f\n", klub[0], koef1);
-                    cout<<("0\tIzjednaceno/nerjeseno: %.2f\n", koef0);
-                    cout<<("2\t%s: %.2f\n\n", klub[1], koef2);
+                    cout << ("1\t%s: %.2f\n", klub[0], koef1) << endl;
+                    cout << ("0\tIzjednaceno/nerjeseno: %.2f\n", koef0) << endl;
+                    cout << ("2\t%s: %.2f\n\n", klub[1], koef2) << endl;
                     cout<<("Odaberite na sto se kladite pomocu prethodnih oznaka.\n");
                     cin >> kladjenje;
                     if (kladjenje == 1)
