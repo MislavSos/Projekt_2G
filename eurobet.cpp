@@ -27,35 +27,35 @@ int main()
     {
         cout<<"\n";
         cout<<"Trenutna tablica:\n"; // printanje live tablice
-        cout<<"HNL 2022/23\n";
-        char momcadi[10][30] = {"GNK Dinamo Zagreb   ", "HNK Hajduk Split    ",
-                                "NK Osijek           ", "HNK Rijeka          ",
-                                "NK Istra 1961       ", "NK Varazdin         ",
-                                "NK Lokomotiva Zagreb", "NK Slaven Belupo    ",
-                                "HNK Gorica          ", "HNK Sibenik         "};
-        int bodovi[10] = {81, 71, 50, 49, 46, 46, 43, 43, 32, 27};
+        cout<<"HNL 2023/24\n";
+        char momcadi[10][30] = {"GNK Dinamo Zagreb   ", "HNK Rijeka          ",
+                                "HNK Hajduk Split    ", "NK Osijek           ",
+                                "NK Lokomotiva Zagreb", "Nk Varazdin         ",
+                                "HNK Gorica          ", "NK Istra 1961       ",
+                                "NK Slaven Belupo    ", "NK Rudes            "};
+        int bodovi[10] = {82, 74, 68, 57, 51, 42, 41, 41, 33, 9};
         for (int i = 0; i < 10; i++)
-            cout<<"%d.\t%s\t%d\n"<<i + 1<<momcadi[i]<< bodovi[i];
+            cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
         cout<<"\n"; // printanje 5 random utakmica
         cout<<"Utakmice ovog kola:\n";
 #define br_timova 11
-        char timovi[br_timova][21] = {"GNK Dinamo Zagreb",
-                                        "HNK Hajduk Split",
-                                        "NK Osijek",
-                                        "HNK Rijeka",
-                                        "NK Istra 1961",
-                                        "NK Varazdin",
+        char timovi[br_timova][21] = {"GNK Dinamo Zagreb ",
+                                        "HNK Hajduk Split ",
+                                        "NK Osijek ",
+                                        "HNK Rijeka ",
+                                        "NK Istra 1961 ",
+                                        "NK Varazdin ",
                                         "NK Lokomotiva Zagreb",
-                                        "NK Slaven Belupo",
-                                        "HNK Gorica",
-                                        "HNK Sibenik",
+                                        "NK Slaven Belupo ",
+                                        "HNK Gorica ",
+                                        "HNK Sibenik ",
                                         ""};
             char klub[br_timova][21];
             srand(time(NULL));
             int tim1, tim2, brojac = 0, tim[10];
             for (int i = 0; i < 5; i++)
             {
-                cout<<("%d.\t", i + 1);
+                cout << i + 1 << ".\t";
                 tim1 = rand() % br_timova;
                 for (int i = 0; i < 200; i++)
                     if (strcmp(timovi[tim1], "") == 0)
@@ -85,7 +85,7 @@ int main()
                 cin >> izbor_utk;
                 if (izbor_utk == 1)
                 {
-                    cout<<"Odabrali ste utakmicu:\n%s vs %s\n"<< klub[0]<< klub[1];
+                    cout << "Odabrali ste utakmicu: " << klub[0] << "vs " << klub[1];
                     cout<<"\n";
                     cout<<"Kladite se prema sljedecim oznakama:\n";
                     cout<<"Pobjeda domaćina - 1\n";
