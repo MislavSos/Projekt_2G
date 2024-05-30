@@ -97,7 +97,6 @@ int main()
                     } while (koef1 <= 1 || koef1 > 2);
                     do
                     {
-                        koef2 = rand() % 10;
                         koef_2 = rand() % 100;
                         koef__2 = rand() % 100;
                         koef2 = rand() % 7 + (koef_2 / koef__2);
@@ -205,7 +204,6 @@ int main()
                     } while (koef1 <= 1 || koef1 > 2);
                     do
                     {
-                        koef2 = rand() % 10;
                         koef_2 = rand() % 100;
                         koef__2 = rand() % 100;
                         koef2 = rand() % 7 + (koef_2 / koef__2);
