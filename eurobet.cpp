@@ -4,7 +4,7 @@
 #include <iomanip>
 using namespace std;
 
-void koef1Manji(double koef0, double koef_1, double koef__1, double koef1, double koef_2, double koef__2, double koef2)
+void koef1Manji(double &koef0, double &koef_1, double &koef__1, double &koef1, double &koef_2, double &koef__2, double &koef2)
 {
     do
     {
@@ -19,22 +19,24 @@ void koef1Manji(double koef0, double koef_1, double koef__1, double koef1, doubl
         koef__2 = rand() % 100;
         koef2 = rand() % 7 + (koef_2 / koef__2);
     } while (koef2 <= 2 || koef2 >= 7);
+    koef0 = (koef1 + koef2) / 2;
 }
-void koef2Manji(double koef0, double koef_1, double koef__1, double koef1, double koef_2, double koef__2, double koef2)
+
+void koef2Manji(double &koef0, double &koef_1, double &koef__1, double &koef1, double &koef_2, double &koef__2, double &koef2)
 {
     do
     {
-        koef2 = rand() % 10;
         koef_2 = rand() % 100;
         koef__2 = rand() % 100;
         koef2 = rand() % 2 + (koef_2 / koef__2);
-    } while (koef2 <= 1 || koef2 >= 2);
+    } while (koef2 <= 1 || koef2 > 2);
     do
     {
         koef_1 = rand() % 100;
         koef__1 = rand() % 100;
         koef1 = rand() % 7 + (koef_1 / koef__1);
-    } while (koef1 <= 2 || koef1 > 7);
+    } while (koef1 <= 2 || koef1 >= 7);
+    koef0 = (koef1 + koef2) / 2;
 }
 
 template <typename T>
@@ -186,7 +188,7 @@ int main()
                 koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
             }
             cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
-            cout << "X\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0<< endl;
+            cout << "X\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
             kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
         }
