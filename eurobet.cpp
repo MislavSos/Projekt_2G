@@ -136,7 +136,7 @@ int main()
         cout << "\n"; // printanje 5 random utakmica
         cout << "Utakmice ovog kola:\n";
 #define br_timova 11
-        char timovi[br_timova][21] = {"GNK Dinamo Zagreb", "HNK Hajduk Split", "NK Osijek", "HNK Rijeka", "NK Istra 1961", "NK Varazdin", "NK Lokomotiva Zagreb", "NK Slaven Belupo", "HNK Gorica", "HNK Sibenik", ""};
+        char timovi[br_timova][21] = {"GNK Dinamo Zagreb", "HNK Rijeka", "HNK Hajduk Split", "NK Osijek", "NK Lokomotiva Zagreb", "NK Varazdin", "HNK Gorica", "NK Istra 1961", "NK Slaven Belupo", "NK Rudes", ""};
         char klub[br_timova][21];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[10];
@@ -190,6 +190,98 @@ int main()
             cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
+            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+        }
+        else if (izbor_utk == 2)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[2] << "vs " << klub[3];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - X\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[2] < tim[3]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[3] < tim[2])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[2] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[3] << ": " << setprecision(3) << koef2 << endl;
+            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+        }
+        else if (izbor_utk == 3)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[4] << "vs " << klub[5];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - X\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[4] < tim[5]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[5] < tim[4])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[4] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[5] << ": " << setprecision(3) << koef2 << endl;
+            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+        }
+        else if (izbor_utk == 4)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[6] << "vs " << klub[7];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - X\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[6] < tim[7]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[7] < tim[6])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[6] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[7] << ": " << setprecision(3) << koef2 << endl;
+            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+        }
+        else if (izbor_utk == 5)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[8] << "vs " << klub[9];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - X\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[8] < tim[9]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[9] < tim[8])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[8] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[9] << ": " << setprecision(3) << koef2 << endl;
             kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
         }
     }
