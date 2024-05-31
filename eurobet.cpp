@@ -175,7 +175,7 @@ int main()
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
-            cout << "Neriješen rezultat - X\n";
+            cout << "Neriješen rezultat - 0\n";
             cout << "Pobjeda gosta - 2\n";
             cout << "\n";
             cout << "Koeficijenti:\n";
@@ -188,7 +188,7 @@ int main()
                 koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
             }
             cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
-            cout << "X\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
             kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
         }
