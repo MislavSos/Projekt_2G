@@ -63,7 +63,7 @@ void kladenje(int kladjenje, int gol1, int gol2, T uplata, T koef0, T koef1, T k
         else if (gol1 == gol2 || gol1 < gol2)
             cout << ("Nazalost niste pogodili ishod utakmice.\n");
     }
-    else if (kladjenje == 'X')
+    else if (kladjenje == 0)
     {
         cout << "Koliko uplacujete?" << endl;
         cin >> uplata;
