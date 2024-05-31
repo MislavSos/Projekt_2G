@@ -57,8 +57,8 @@ void kladenje(int kladjenje, int gol1, int gol2, T uplata, T koef0, T koef1, T k
             dobitak = uplata * koef1;
             profit = (uplata * koef1) - uplata;
             cout << "Pogodili ste ishod utakmice." << endl;
-            cout << "Vas dobitak: " << dobitak << endl;
-            cout << "Vas profit: " << profit << endl;
+            cout << "Vas dobitak: " << setprecision(3) << dobitak << "€" << endl;
+            cout << "Vas profit: " << setprecision(3) << profit << "€" << endl;
         }
         else if (gol1 == gol2 || gol1 < gol2)
             cout << ("Nazalost niste pogodili ishod utakmice.\n");
@@ -77,8 +77,8 @@ void kladenje(int kladjenje, int gol1, int gol2, T uplata, T koef0, T koef1, T k
             profit = (uplata * koef0) - uplata;
             cout << "Ishod utakmice: Nerijeseno" << endl;
             cout << "Pogodili ste ishod utakmice." << endl;
-            cout << "Vas dobitak: " << dobitak << endl;
-            cout << "Vas profit: " << profit << endl;
+            cout << "Vas dobitak: " << setprecision(3) << dobitak << "€" << endl;
+            cout << "Vas profit: " << setprecision(3) << profit << "€" << endl;
         }
         else if (gol1 > gol2 || gol1 < gol2)
             cout << "Nazalost niste pogodili ishod utakmice." << endl;
@@ -96,8 +96,8 @@ void kladenje(int kladjenje, int gol1, int gol2, T uplata, T koef0, T koef1, T k
             dobitak = uplata * koef2;
             profit = (uplata * koef2) - uplata;
             cout << "Pogodili ste ishod utakmice." << endl;
-            cout << "Vas dobitak: " << dobitak << endl;
-            cout << "Vas profit: " << profit << endl;
+            cout << "Vas dobitak: " << setprecision(3) << dobitak << "€" << endl;
+            cout << "Vas profit: " << setprecision(3) << profit << "€" << endl;
         }
         else if (gol1 == gol2 || gol1 > gol2)
             cout << "Nazalost niste pogodili ishod utakmice." << endl;
@@ -106,11 +106,12 @@ void kladenje(int kladjenje, int gol1, int gol2, T uplata, T koef0, T koef1, T k
 
 int main()
 {
-    cout << "███████   ██   ██   ██████     █████    ██████    ███████   ████████" << endl;
-    cout << "██        ██   ██   ██   ██   ██   ██   ██   ██   ██           ██" << endl;
-    cout << "███████   ██   ██   ███████   ██   ██   ██████    ███████      ██" << endl;
-    cout << "██        ██   ██   ██  ██    ██   ██   ██   ██   ██           ██" << endl;
-    cout << "███████    █████    ██   ██    █████    ██████    ███████      ██" << endl;
+    cout << ".------. .------. .------. .------. .------. .------. .------." << endl;
+    cout << "|E.--. | |U.--. | |R.--. | |O.--. | |B.--. | |E.--. | |T.--. |" << endl;
+    cout << "| (\\/) | | (\\/) | | :(): | | :/\\: | | :(): | | (\\/) | | :/\\: |" << endl;
+    cout << "| :\\/: | | :\\/: | | ()() | | :\\/: | | ()() | | :\\/: | | (__) |" << endl;
+    cout << "| '--'E| | '--'U| | '--'R| | '--'O| | '--'B| | '--'E| | '--'T|" << endl;
+    cout << "`------' `------' `------' `------' `------' `------' `------'" << endl;
 
     int izbor, tablica[10][3];
     double uplata = 0, koef, isplata;
