@@ -14,7 +14,6 @@ void koef1Manji(double &koef0, double &koef_1, double &koef__1, double &koef1, d
     } while (koef1 <= 1 || koef1 > 2);
     do
     {
-        koef2 = rand() % 10;
         koef_2 = rand() % 100;
         koef__2 = rand() % 100;
         koef2 = rand() % 7 + (koef_2 / koef__2);
@@ -199,7 +198,7 @@ int main()
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
-            cout << "Neriješen rezultat - X\n";
+            cout << "Neriješen rezultat - 0\n";
             cout << "Pobjeda gosta - 2\n";
             cout << "\n";
             cout << "Koeficijenti:\n";
@@ -222,7 +221,7 @@ int main()
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
-            cout << "Neriješen rezultat - X\n";
+            cout << "Neriješen rezultat - 0\n";
             cout << "Pobjeda gosta - 2\n";
             cout << "\n";
             cout << "Koeficijenti:\n";
@@ -245,7 +244,7 @@ int main()
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
-            cout << "Neriješen rezultat - X\n";
+            cout << "Neriješen rezultat - 0\n";
             cout << "Pobjeda gosta - 2\n";
             cout << "\n";
             cout << "Koeficijenti:\n";
@@ -268,7 +267,7 @@ int main()
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
-            cout << "Neriješen rezultat - X\n";
+            cout << "Neriješen rezultat - 0\n";
             cout << "Pobjeda gosta - 2\n";
             cout << "\n";
             cout << "Koeficijenti:\n";
