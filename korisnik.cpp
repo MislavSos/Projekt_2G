@@ -13,12 +13,6 @@ int main()
     cin >> odabir;
     if(odabir == 1)
     {
-        korisnik.open("korisnik.txt");
-        while (getline(korisnik, ispis_datoteke))
-        {
-            cout << ispis_datoteke << endl;
-        }
-        korisnik.close();
         korisnik.open("korisnik.txt", ios::app);
         cout << "Unesite ime racuna: ";
         getline(cin, unos_korisnika);
@@ -28,7 +22,12 @@ int main()
     }
     if(odabir == 2)
     {
-
+        korisnik.open("korisnik.txt");
+        while(getline(korisnik, ispis_datoteke))
+        {
+            cout << ispis_datoteke << endl;
+        }
+        korisnik.close();
     }
     return 0;
 }

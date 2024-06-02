@@ -116,15 +116,15 @@ int main()
 
     int izbor, tablica[10][3];
     double uplata = 0, koef, isplata;
-    cout << "Kladite se odgovorno!  18+\n";
-    cout << "Cijena uplate je 50c.\n";
-    cout << "Izaberite ligu pomocu broja.\n";
-    cout << "1. HNL\n";
-    cout << "2. Premier League\n";
-    cout << "3. La Liga\n";
-    cout << "4. Bundesliga\n";
-    cout << "5. Serie A\n";
-    cout << "6. Ligue 1\n";
+    cout << "Kladite se odgovorno!  18+" << endl;
+    cout << "Cijena uplate je 50c."<<endl;
+    cout << "Izaberite ligu pomocu broja." << endl;
+    cout << "1. HNL"<<endl;
+    cout << "2. Premier League" << endl;
+    cout << "3. La Liga" << endl;
+    cout << "4. Bundesliga" << endl;
+    cout << "5. Serie A" << endl;
+    cout << "6. Ligue 1" << endl;
     cin >> izbor;
     if (izbor == 1)
     {
@@ -135,11 +135,11 @@ int main()
         int bodovi[10] = {82, 74, 68, 57, 51, 42, 41, 41, 33, 9};
         for (int i = 0; i < 10; i++)
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
-        cout << "\n"; // printanje 5 random utakmica
-        cout << "Utakmice ovog kola:\n";
-#define br_timova 11
+        cout << endl; // printanje 5 random utakmica
+        cout << "Utakmice ovog kola:"<<endl;
+        #define br_timova 11
         char timovi[br_timova][21] = {"GNK Dinamo Zagreb", "HNK Rijeka", "HNK Hajduk Split", "NK Osijek", "NK Lokomotiva Zagreb", "NK Varazdin", "HNK Gorica", "NK Istra 1961", "NK Slaven Belupo", "NK Rudes", ""};
-        char klub[br_timova][10];
+        char klub[br_timova][21];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[10];
         for (int i = 0; i < 5; i++)
@@ -168,19 +168,19 @@ int main()
         }
         int izbor_utk, kladjenje, rand_rez, gol1, gol2;
         double koef1, koef0, koef2, koef_1, koef__1, koef_2, koef__2, uplata, dobitak, profit;
-        cout << "\n";
-        cout << "Molimo unesite redni broj utakmice na koju se želite kladiti.\n";
+        cout << endl;
+        cout << "Molimo unesite redni broj utakmice na koju se želite kladiti."<<endl;
         cin >> izbor_utk;
         if (izbor_utk == 1)
         {
-            cout << "Odabrali ste utakmicu: " << klub[0] << "vs " << klub[1];
-            cout << "\n";
-            cout << "Kladite se prema sljedecim oznakama:\n";
-            cout << "Pobjeda domaćina - 1\n";
-            cout << "Neriješen rezultat - 0\n";
-            cout << "Pobjeda gosta - 2\n";
-            cout << "\n";
-            cout << "Koeficijenti:\n";
+            cout << "Odabrali ste utakmicu: " << klub[0] << " vs " << klub[1];
+            cout << endl;
+            cout << "Kladite se prema sljedecim oznakama:"<<endl;
+            cout << "Pobjeda domaćina - 1"<<endl;
+            cout << "Neriješen rezultat - 0"<<endl;
+            cout << "Pobjeda gosta - 2"<<endl;
+            cout << endl;
+            cout << "Koeficijenti:"<<endl;
             if (tim[0] < tim[1]) // random koef
             {
                 koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
@@ -196,7 +196,7 @@ int main()
         }
         else if (izbor_utk == 2)
         {
-            cout << "Odabrali ste utakmicu: " << klub[2] << "vs " << klub[3];
+            cout << "Odabrali ste utakmicu: " << klub[2] << " vs " << klub[3];
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
@@ -219,7 +219,7 @@ int main()
         }
         else if (izbor_utk == 3)
         {
-            cout << "Odabrali ste utakmicu: " << klub[4] << "vs " << klub[5];
+            cout << "Odabrali ste utakmicu: " << klub[4] << " vs " << klub[5];
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
@@ -242,7 +242,7 @@ int main()
         }
         else if (izbor_utk == 4)
         {
-            cout << "Odabrali ste utakmicu: " << klub[6] << "vs " << klub[7];
+            cout << "Odabrali ste utakmicu: " << klub[6] << " vs " << klub[7];
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
@@ -265,7 +265,7 @@ int main()
         }
         else if (izbor_utk == 5)
         {
-            cout << "Odabrali ste utakmicu: " << klub[8] << "vs " << klub[9];
+            cout << "Odabrali ste utakmicu: " << klub[8] << " vs " << klub[9];
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
             cout << "Pobjeda domaćina - 1\n";
