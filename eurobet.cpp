@@ -2,6 +2,8 @@
 #include <cstring>
 #include <ctime>
 #include <iomanip>
+#include <string>
+
 using namespace std;
 
 void koef1Manji(double &koef0, double &koef_1, double &koef__1, double &koef1, double &koef_2, double &koef__2, double &koef2)
@@ -129,7 +131,7 @@ int main()
         cout << "\n";
         cout << "Trenutna tablica:\n"; // printanje live tablice
         cout << "HNL 2023/24\n";
-        char momcadi[10][30] = {"GNK Dinamo Zagreb   ", "HNK Rijeka          ", "HNK Hajduk Split    ", "NK Osijek           ", "NK Lokomotiva Zagreb", "Nk Varazdin         ", "HNK Gorica          ", "NK Istra 1961       ", "NK Slaven Belupo    ", "NK Rudes             "};
+        string momcadi[10] = {"GNK Dinamo Zagreb   ", "HNK Rijeka          ", "HNK Hajduk Split    ", "NK Osijek           ", "NK Lokomotiva Zagreb", "Nk Varazdin         ", "HNK Gorica          ", "NK Istra 1961       ", "NK Slaven Belupo    ", "NK Rudes             "};
         int bodovi[10] = {82, 74, 68, 57, 51, 42, 41, 41, 33, 9};
         for (int i = 0; i < 10; i++)
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
@@ -137,7 +139,7 @@ int main()
         cout << "Utakmice ovog kola:\n";
 #define br_timova 11
         char timovi[br_timova][21] = {"GNK Dinamo Zagreb", "HNK Rijeka", "HNK Hajduk Split", "NK Osijek", "NK Lokomotiva Zagreb", "NK Varazdin", "HNK Gorica", "NK Istra 1961", "NK Slaven Belupo", "NK Rudes", ""};
-        char klub[br_timova][21];
+        char klub[br_timova][10];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[10];
         for (int i = 0; i < 5; i++)
