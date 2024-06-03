@@ -116,8 +116,11 @@ int main()
 
     int izbor, tablica[10][3];
     double uplata = 0, koef, isplata;
+    bool nastaviKladenje = true;
+    string nastavakKladenja;
     cout << "Kladite se odgovorno!  18+" << endl;
     cout << "Cijena uplate je 50c."<<endl;
+    jump:
     cout << "Izaberite ligu pomocu broja." << endl;
     cout << "1. HNL"<<endl;
     cout << "2. Premier League" << endl;
@@ -285,6 +288,16 @@ int main()
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[9] << ": " << setprecision(3) << koef2 << endl;
             kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+        }
+        cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
+        cin >> nastavakKladenja;
+        if(nastavakKladenja == "Da" || nastavakKladenja == "da")
+        {
+            goto jump;
+        }
+        else
+        {
+            cout << "Hvala na kladenju!" << endl;
         }
     }
     return 0;
