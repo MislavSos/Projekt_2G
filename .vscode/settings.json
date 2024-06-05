@@ -5,7 +5,9 @@
         "ctime": "cpp",
         "string": "cpp",
         "iomanip": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "iosfwd": "cpp",
+        "*.tcc": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

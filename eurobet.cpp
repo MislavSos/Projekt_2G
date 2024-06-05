@@ -3,6 +3,7 @@
 #include <ctime>
 #include <iomanip>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -40,19 +41,13 @@ void koef2Manji(double &koef0, double &koef_1, double &koef__1, double &koef1, d
     koef0 = (koef1 + koef2) / 2;
 }
 
-template <typename T>
+/*template <typename T>
 void kladenje(int kladjenje, int gol1, int gol2, T uplata, T koef0, T koef1, T koef2, T dobitak, T profit)
 {
     cout << "Odaberite na sto se kladite pomocu prethodnih oznaka." << endl;
     cin >> kladjenje;
     if (kladjenje == 1)
     {
-        cout << "Koliko uplacujete?" << endl;
-        cin >> uplata;
-        srand(time(NULL));
-        gol1 = rand() % 4;
-        gol2 = rand() % 4;
-        cout << "Rezultat: " << gol1 << ":" << gol2 << endl;
         if (gol1 > gol2)
         {
             dobitak = uplata * koef1;
@@ -68,9 +63,6 @@ void kladenje(int kladjenje, int gol1, int gol2, T uplata, T koef0, T koef1, T k
     {
         cout << "Koliko uplacujete?" << endl;
         cin >> uplata;
-        srand(time(NULL));
-        gol1 = rand() % 4;
-        gol2 = rand() % 4;
         cout << "Rezultat: " << gol1 << ":" << gol2 << endl;
         if (gol1 == gol2)
         {
@@ -103,6 +95,43 @@ void kladenje(int kladjenje, int gol1, int gol2, T uplata, T koef0, T koef1, T k
         else if (gol1 == gol2 || gol1 > gol2)
             cout << "Nazalost niste pogodili ishod utakmice." << endl;
     }
+}*/
+template <typename T>
+void prolaznost(int kladjenje, int gol1, int gol2, T prolaznost_listica)
+{
+    if (kladjenje == 1)
+    {
+        if (gol1 > gol2)
+        {
+            prolaznost_listica = true;
+        }
+        else if (gol1 == gol2 || gol1 < gol2)
+        {
+            prolaznost_listica = false;
+        }
+    }
+    else if (kladjenje == 0)
+    {
+        if (gol1 == gol2)
+        {
+            prolaznost_listica = true;
+        }
+        else if (gol1 > gol2 || gol1 < gol2)
+        {
+            prolaznost_listica = false;
+        }
+    }
+    else if (kladjenje == 2)
+    {
+        if (gol1 < gol2)
+        {
+            prolaznost_listica = true;
+        }
+        else if (gol1 == gol2 || gol1 > gol2)
+        {
+            prolaznost_listica = false;
+        }
+    }
 }
 
 int main()
@@ -115,12 +144,11 @@ int main()
     cout << "`------' `------' `------' `------' `------' `------' `------'" << endl;
 
     int izbor, tablica[10][3];
-    double uplata = 0, koef, isplata;
     bool nastaviKladenje = true;
     string nastavakKladenja;
     cout << "Kladite se odgovorno!  18+" << endl;
     cout << "Cijena uplate je 50c."<<endl;
-    jump:
+    pocetak:
     cout << "Izaberite ligu pomocu broja." << endl;
     cout << "1. HNL"<<endl;
     cout << "2. Premier League" << endl;
@@ -129,6 +157,11 @@ int main()
     cout << "5. Serie A" << endl;
     cout << "6. Ligue 1" << endl;
     cin >> izbor;
+    fstream utakmice, rezultat_tekmi, kladenja;
+    string ispis_tekmi, ispis_rezultata;
+    int kladjenje;
+    double koef_ukupno;
+
     if (izbor == 1)
     {
         cout << "\n";
@@ -169,13 +202,17 @@ int main()
             strcpy(timovi[tim2], timovi[10]);
             cout << "\n";
         }
-        int izbor_utk, kladjenje, rand_rez, gol1, gol2;
-        double koef1, koef0, koef2, koef_1, koef__1, koef_2, koef__2, uplata, dobitak, profit;
+        int izbor_utk, rand_rez;
+        double koef1, koef0, koef2, koef_1, koef__1, koef_2, koef__2;
         cout << endl;
+        ovo_kolo:
         cout << "Molimo unesite redni broj utakmice na koju se želite kladiti."<<endl;
         cin >> izbor_utk;
         if (izbor_utk == 1)
         {
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice <<klub[0]<<" vs "<<klub[1]<< endl;
+            utakmice.close();
             cout << "Odabrali ste utakmicu: " << klub[0] << " vs " << klub[1];
             cout << endl;
             cout << "Kladite se prema sljedecim oznakama:"<<endl;
@@ -195,10 +232,13 @@ int main()
             cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
-            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+            //kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
         }
         else if (izbor_utk == 2)
         {
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[2] << " vs " << klub[3] << endl;
+            utakmice.close();
             cout << "Odabrali ste utakmicu: " << klub[2] << " vs " << klub[3];
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
@@ -218,10 +258,13 @@ int main()
             cout << "1\t" << klub[2] << ": " << setprecision(3) << koef1 << endl;
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[3] << ": " << setprecision(3) << koef2 << endl;
-            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+            //kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
         }
         else if (izbor_utk == 3)
         {
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[4] << " vs " << klub[5] << endl;
+            utakmice.close();
             cout << "Odabrali ste utakmicu: " << klub[4] << " vs " << klub[5];
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
@@ -241,10 +284,13 @@ int main()
             cout << "1\t" << klub[4] << ": " << setprecision(3) << koef1 << endl;
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[5] << ": " << setprecision(3) << koef2 << endl;
-            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+            //kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
         }
         else if (izbor_utk == 4)
         {
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[6] << " vs " << klub[7] << endl;
+            utakmice.close();
             cout << "Odabrali ste utakmicu: " << klub[6] << " vs " << klub[7];
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
@@ -264,7 +310,22 @@ int main()
             cout << "1\t" << klub[6] << ": " << setprecision(3) << koef1 << endl;
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[7] << ": " << setprecision(3) << koef2 << endl;
-            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+            cin >> kladjenje;
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[6] << " vs " << klub[7] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            kladenja.open("kladjenja.txt", ios::app);
+            kladenja << kladjenje << endl;
+            kladenja.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[6] << " vs " << klub[7] << "\t" <<endl;
+            rezultat_tekmi.close();
         }
         else if (izbor_utk == 5)
         {
@@ -287,18 +348,77 @@ int main()
             cout << "1\t" << klub[8] << ": " << setprecision(3) << koef1 << endl;
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[9] << ": " << setprecision(3) << koef2 << endl;
-            kladenje(kladjenje, gol1, gol2, uplata, koef0, koef1, koef2, dobitak, profit);
+            cin >> kladjenje;
+            if(kladjenje==1)
+                koef_ukupno += koef1;
+            else if(kladjenje==0)
+                koef_ukupno += koef0;
+            else if(kladjenje==2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[8] << " vs " << klub[9] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            kladenja.open("kladjenja.txt", ios::app);
+            kladenja << kladjenje << endl;
+            kladenja.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[8] << " vs " << klub[9] << "\t" << endl;
+            rezultat_tekmi.close();
         }
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
+        int kolo_ili_liga;
         if(nastavakKladenja == "Da" || nastavakKladenja == "da")
         {
-            goto jump;
+            cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
+            cin >> kolo_ili_liga;
+            if(kolo_ili_liga==1)
+                goto ovo_kolo;
+            else if(kolo_ili_liga==2)
+                goto pocetak;
         }
         else
-        {
-            cout << "Hvala na kladenju!" << endl;
-        }
+            cout << endl;
     }
+
+    int gol1, gol2;
+    double uplata, dobitak, profit;
+    bool prolaznost_listica = true;
+    string line;
+    int lineNumber = 0;
+    cout << "Ovo je vas listic:" << endl;
+    utakmice.open("utakmice.txt");
+    while(getline(utakmice, ispis_tekmi))
+    {
+        cout << ispis_tekmi <<"\t"<< endl;
+    }
+    utakmice.close();
+    cout << "Koliko uplacujete? ";
+    cin >> uplata;
+    cout<<endl<<"Ovo je listic poslije odigranih utakmica:"<<endl;
+    rezultat_tekmi.open("rezultat_tekmi.txt");
+    while(getline(rezultat_tekmi, ispis_rezultata))
+    {
+        srand(time(NULL));
+        gol1 = rand() % 4;
+        gol2 = rand() % 4;
+        cout << ispis_rezultata << "\t" << gol1 << ":" << gol2 << endl;
+        prolaznost(kladjenje, gol1, gol2, prolaznost_listica);
+        if (prolaznost_listica == false)
+            break;
+    }
+    rezultat_tekmi.close();
+    cout << "Uplata: " << uplata <<"€"<< endl;
+    if(prolaznost_listica==true)
+    {
+        dobitak = uplata*koef_ukupno;
+        profit = dobitak - uplata;
+        cout << "Dobitak: " << dobitak << "€" << endl<< "Profit: " << profit << "€" << endl;
+    }
+    else
+    {
+        cout << "Nazalost, listic Vam nije prosao."<<endl;
+    }
+    cout << "Hvala na kladenju!" << endl;
     return 0;
 }
