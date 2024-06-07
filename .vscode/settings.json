@@ -1,13 +1,8 @@
 {
     "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp",
-        "ctime": "cpp",
-        "string": "cpp",
-        "iomanip": "cpp",
-        "fstream": "cpp",
         "iosfwd": "cpp",
-        "*.tcc": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "disabled"
+        "iomanip": "cpp",
+        "cstring": "cpp",
+        "iostream": "cpp"
+    }
 }

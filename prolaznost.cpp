@@ -3,8 +3,8 @@
 #include <ctime>
 using namespace std;
 
-template <typename T>
-void prolaznost(int kladjenje, int gol1, int gol2, T prolaznost_listica)
+template<typename T>
+void prolaznost(int kladjenje, int gol1, int gol2, T& prolaznost_listica)
 {
     if (kladjenje == 1)
     {
@@ -13,7 +13,9 @@ void prolaznost(int kladjenje, int gol1, int gol2, T prolaznost_listica)
             prolaznost_listica = true;
         }
         else if (gol1 == gol2 || gol1 < gol2)
+        {
             prolaznost_listica = false;
+        }
     }
     else if (kladjenje == 0)
     {
@@ -22,7 +24,9 @@ void prolaznost(int kladjenje, int gol1, int gol2, T prolaznost_listica)
             prolaznost_listica = true;
         }
         else if (gol1 > gol2 || gol1 < gol2)
+        {
             prolaznost_listica = false;
+        }
     }
     else if (kladjenje == 2)
     {
@@ -31,13 +35,17 @@ void prolaznost(int kladjenje, int gol1, int gol2, T prolaznost_listica)
             prolaznost_listica = true;
         }
         else if (gol1 == gol2 || gol1 > gol2)
+        {
             prolaznost_listica = false;
+        }
     }
 }
 
 int main()
 {
-    int kladjenje, gol1, gol2, prolaznost_listica;
+    int kladjenje, gol1, gol2;
+    bool prolaznost_listica=true;
     prolaznost(kladjenje, gol1, gol2, prolaznost_listica);
+    cout << prolaznost_listica;
     return 0;
 }
