@@ -8,7 +8,6 @@ void golovi(int &gol1, int &gol2)
     gol1 = rand() % 4;
     gol2 = rand() % 4;
 }
-
 int main()
 {
     int gol1, gol2;
