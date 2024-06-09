@@ -358,7 +358,7 @@ int main()
     cout<<endl<<"Ovo je listic poslije odigranih utakmica:"<<endl;
     rezultat_tekmi.open("rezultat_tekmi.txt");
     fstream odabrani_koef1("odabrani_koef.bin", ios::binary | ios::in);
-    while(getline(rezultat_tekmi, ispis_rezultata) && odabrani_koef1.read((char *)&kladjenje, sizeof(kladjenje)))
+    while (getline(rezultat_tekmi, ispis_rezultata) && odabrani_koef1.read((char *)&kladjenje, sizeof(kladjenje)))
     {
         golovi(gol1, gol2);
         cout << ispis_rezultata << "\t" << gol1 << ":" << gol2 << endl;
