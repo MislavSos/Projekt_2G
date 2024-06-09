@@ -13,7 +13,7 @@ int main()
     cin >> odabir;
     if (odabir == 1)
     {
-        cout << "Unesite ime racuna: ";
+        cout << "Unesite ime racuna: " << endl;
         getline(cin, log_in_racun);
         cout << "Unesite lozinku: ";
         getline(cin, log_in_lozinka);
