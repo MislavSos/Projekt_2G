@@ -1,10 +1,2 @@
-NK Slaven Belupo vs HNK Rijeka
-NK Slaven Belupo vs HNK Rijeka	Vas odabir: 1
-NK Varazdin vs HNK Hajduk Split	Vas odabir: 1
-HNK Gorica vs HNK Rijeka
-HNK Gorica vs HNK Rijeka	Vas odabir: 1
-GNK Dinamo Zagreb vs NK Rudes	Vas odabir: 1
-NK Istra 1961 vs NK Varazdin
-NK Istra 1961 vs NK Varazdin	Vas odabir: 1
-GNK Dinamo Zagreb vs NK Rudes	Vas odabir: 1
-HNK Gorica vs NK Istra 1961
+NK Istra 1961 vs NK Lokomotiva Zagreb	Vas odabir: 1
+HNK Rijeka vs NK Varazdin	Vas odabir: 1

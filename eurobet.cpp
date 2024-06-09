@@ -249,9 +249,6 @@ int main()
         }
         else if (izbor_utk == 4)
         {
-            utakmice.open("utakmice.txt", ios::app);
-            utakmice << klub[6] << " vs " << klub[7] << endl;
-            utakmice.close();
             cout << "Odabrali ste utakmicu: " << klub[6] << " vs " << klub[7];
             cout << "\n";
             cout << "Kladite se prema sljedecim oznakama:\n";
@@ -355,7 +352,7 @@ int main()
     utakmice.close();
     cout << "Koliko uplacujete? ";
     cin >> uplata;
-    cout<<endl<<"Ovo je listic poslije odigranih utakmica:"<<endl;
+    cout << endl << "Ovo je listic poslije odigranih utakmica:" << endl;
     rezultat_tekmi.open("rezultat_tekmi.txt");
     fstream odabrani_koef1("odabrani_koef.bin", ios::binary | ios::in);
     while (getline(rezultat_tekmi, ispis_rezultata) && odabrani_koef1.read((char *)&kladjenje, sizeof(kladjenje)))
