@@ -6,6 +6,34 @@
 #include <fstream>
 using namespace std;
 
+template <typename T>
+void printanje_tekmi(int tim1, int tim2, T br_timova, char timovi[br_timova][21], char klub[br_timova][21], int brojac, char tim[10])
+{
+    for (int i = 0; i < 5; i++)
+    {
+        cout << i + 1 << ". ";
+        tim1 = rand() % br_timova;
+        for (int i = 0; i < 200; i++)
+            if (strcmp(timovi[tim1], "") == 0)
+                tim1 = rand() % br_timova;
+        strcpy(klub[brojac], timovi[tim1]);
+        tim[brojac] = tim1;
+        brojac++;
+        cout << timovi[tim1];
+        strcpy(timovi[tim1], timovi[10]);
+        cout << "\tvs\t";
+        tim2 = rand() % br_timova;
+        for (int i = 0; i < 200; i++)
+            if (strcmp(timovi[tim2], "") == 0)
+                tim2 = rand() % br_timova;
+        strcpy(klub[brojac], timovi[tim2]);
+        tim[brojac] = tim2;
+        brojac++;
+        cout << timovi[tim2];
+        strcpy(timovi[tim2], timovi[10]);
+        cout << "\n";
+    }
+}
 void krivi_unos(int kladjenje)
 {
     while (kladjenje > 2 || kladjenje < 0)
@@ -191,6 +219,7 @@ int main()
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
             cin >> kladjenje;
+            krivi_unos(kladjenje);
             if (kladjenje == 1)
                 koef_ukupno += koef1;
             else if (kladjenje == 0)
@@ -229,6 +258,7 @@ int main()
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[3] << ": " << setprecision(3) << koef2 << endl;
             cin >> kladjenje;
+            krivi_unos(kladjenje);
             if (kladjenje == 1)
                 koef_ukupno += koef1;
             else if (kladjenje == 0)
@@ -267,6 +297,7 @@ int main()
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[5] << ": " << setprecision(3) << koef2 << endl;
             cin >> kladjenje;
+            krivi_unos(kladjenje);
             if (kladjenje == 1)
                 koef_ukupno += koef1;
             else if (kladjenje == 0)
@@ -305,6 +336,7 @@ int main()
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[7] << ": " << setprecision(3) << koef2 << endl;
             cin >> kladjenje;
+            krivi_unos(kladjenje);
             if (kladjenje == 1)
                 koef_ukupno += koef1;
             else if (kladjenje == 0)
