@@ -317,7 +317,7 @@ pocetak:
             utakmice.open("utakmice.txt", ios::app);
             utakmice << klub[6] << " vs " << klub[7] << "\t" << "Vas odabir: " << kladjenje << endl;
             utakmice.close();
-            fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
             odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
             odabrani_koef.close();
             rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -569,7 +569,7 @@ pocetak:
             utakmice.open("utakmice.txt", ios::app);
             utakmice << klub[6] << " vs " << klub[7] << "\t" << "Vas odabir: " << kladjenje << endl;
             utakmice.close();
-            fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
             odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
             odabrani_koef.close();
             rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -764,7 +764,7 @@ pocetak:
             utakmice.open("utakmice.txt", ios::app);
             utakmice << klub[16] << " vs " << klub[17] << "\t" << "Vas odabir: " << kladjenje << endl;
             utakmice.close();
-            fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
             odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
             odabrani_koef.close();
             rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -1023,7 +1023,7 @@ pocetak:
             utakmice.open("utakmice.txt", ios::app);
             utakmice << klub[6] << " vs " << klub[7] << "\t" << "Vas odabir: " << kladjenje << endl;
             utakmice.close();
-            fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
             odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
             odabrani_koef.close();
             rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -1218,7 +1218,7 @@ pocetak:
             utakmice.open("utakmice.txt", ios::app);
             utakmice << klub[16] << " vs " << klub[17] << "\t" << "Vas odabir: " << kladjenje << endl;
             utakmice.close();
-            fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
             odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
             odabrani_koef.close();
             rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -1476,7 +1476,7 @@ pocetak:
             utakmice.open("utakmice.txt", ios::app);
             utakmice << klub[6] << " vs " << klub[7] << "\t" << "Vas odabir: " << kladjenje << endl;
             utakmice.close();
-            fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
             odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
             odabrani_koef.close();
             rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -1671,7 +1671,7 @@ pocetak:
             utakmice.open("utakmice.txt", ios::app);
             utakmice << klub[16] << " vs " << klub[17] << "\t" << "Vas odabir: " << kladjenje << endl;
             utakmice.close();
-            fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
             odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
             odabrani_koef.close();
             rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -1889,7 +1889,7 @@ pocetak:
                 utakmice.open("utakmice.txt", ios::app);
                 utakmice << klub[6] << " vs " << klub[7] << "\t" << "Vas odabir: " << kladjenje << endl;
                 utakmice.close();
-                fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+                fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
                 odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
                 odabrani_koef.close();
                 rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -2084,7 +2084,7 @@ pocetak:
                 utakmice.open("utakmice.txt", ios::app);
                 utakmice << klub[16] << " vs " << klub[17] << "\t" << "Vas odabir: " << kladjenje << endl;
                 utakmice.close();
-                fstream odabrani_koef("C:/Users/Gb-gama/Documents/GitHub/Projekt_2G/odabrani_koef.bin", ios::binary | ios::out | ios::app);
+                fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
                 odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
                 odabrani_koef.close();
                 rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
@@ -2144,6 +2144,422 @@ pocetak:
             }
             else
                 cout << endl;
+    }
+    else if (izbor == 6)
+    {
+        cout << "\n";
+        cout << "Trenutna tablica:\n"; // printanje live tablice
+        cout << "Ligue 1 2023/24\n";
+        string momcadi[18] = {  "Paris Saint-Germain   ", "AS Monaco             ",
+                                "Stade Brestois        ", "Lille                 ",
+                                "Nice                  ", "Olympique Lyonnais    ",
+                                "RC Lens               ", "Olympique de Marseille",
+                                "Stade de Reims        ", "Stade Rennais         ",
+                                "Toulouse              ", "Montpellier           ",
+                                "RC Strasbourg         ", "Nantes                ",
+                                "Le Havre              ", "Metz                  ",
+                                "Lorient               ", "Clermont Foot         "};
+        int bodovi[18] = {76, 67, 61, 59, 55, 53, 51, 50, 47, 46, 43, 41, 39, 33, 32, 29, 29, 25};
+        for (int i = 0; i < 18; i++)
+            cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
+        cout << endl; // printanje 10 random utakmica
+        cout << "Utakmice ovog kola:" << endl;
+        char timovi[19][30] = {"Paris Saint-Germain", "AS Monaco", "Stade Brestois", "Lille", "Nice", "Olympique Lyonnais", "RC Lens", "Olympique de Marseille", "Stade de Reims", "Stade Rennais", "Toulouse", "Montpellier", "RC Strasbourg", "Nantes", "Le Havre", "Metz", "Lorient", "Clermont Foot", ""};
+        char klub[19][30];
+        srand(time(NULL));
+        int tim1, tim2, brojac = 0, tim[18];
+        for (int i = 0; i < 9; i++)
+        {
+            cout << i + 1 << ". ";
+            tim1 = rand() % 19;
+            for (int i = 0; i < 200; i++)
+                if (strcmp(timovi[tim1], "") == 0)
+                    tim1 = rand() % 19;
+            strcpy(klub[brojac], timovi[tim1]);
+            tim[brojac] = tim1;
+            brojac++;
+            cout << timovi[tim1];
+            strcpy(timovi[tim1], timovi[18]);
+            cout << "\tvs\t";
+            tim2 = rand() % 19;
+            for (int i = 0; i < 200; i++)
+                if (strcmp(timovi[tim2], "") == 0)
+                    tim2 = rand() % 19;
+            strcpy(klub[brojac], timovi[tim2]);
+            tim[brojac] = tim2;
+            brojac++;
+            cout << timovi[tim2];
+            strcpy(timovi[tim2], timovi[18]);
+            cout << "\n";
+        }
+    ovo_koloL1:
+        cout << "Molimo unesite redni broj utakmice na koju se želite kladiti." << endl;
+        cin >> izbor_utk;
+        if (izbor_utk == 1)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[0] << " vs " << klub[1];
+            cout << endl;
+            cout << "Kladite se prema sljedecim oznakama:" << endl;
+            cout << "Pobjeda domaćina - 1" << endl;
+            cout << "Neriješen rezultat - 0" << endl;
+            cout << "Pobjeda gosta - 2" << endl;
+            cout << endl;
+            cout << "Koeficijenti:" << endl;
+            if (tim[0] < tim[1]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[1] < tim[0])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[0] << " vs " << klub[1] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[0] << " vs " << klub[1] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        else if (izbor_utk == 2)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[2] << " vs " << klub[3];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - 0\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[2] < tim[3]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[3] < tim[2])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[2] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[3] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[2] << " vs " << klub[3] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[2] << " vs " << klub[3] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        else if (izbor_utk == 3)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[4] << " vs " << klub[5];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - 0\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[4] < tim[5]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[5] < tim[4])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[4] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[5] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[4] << " vs " << klub[5] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[4] << " vs " << klub[5] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        else if (izbor_utk == 4)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[6] << " vs " << klub[7];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - 0\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[6] < tim[7]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[7] < tim[6])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[6] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[7] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[6] << " vs " << klub[7] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[6] << " vs " << klub[7] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        else if (izbor_utk == 5)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[8] << " vs " << klub[9];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - 0\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[8] < tim[9]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[9] < tim[8])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[8] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[9] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[8] << " vs " << klub[9] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[8] << " vs " << klub[9] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        if (izbor_utk == 6)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[10] << " vs " << klub[11];
+            cout << endl;
+            cout << "Kladite se prema sljedecim oznakama:" << endl;
+            cout << "Pobjeda domaćina - 1" << endl;
+            cout << "Neriješen rezultat - 0" << endl;
+            cout << "Pobjeda gosta - 2" << endl;
+            cout << endl;
+            cout << "Koeficijenti:" << endl;
+            if (tim[10] < tim[11]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[11] < tim[10])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[10] << " vs " << klub[11] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[10] << " vs " << klub[11] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        else if (izbor_utk == 7)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[12] << " vs " << klub[13];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - 0\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[12] < tim[13]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[13] < tim[12])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[12] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[13] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[12] << " vs " << klub[13] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[12] << " vs " << klub[13] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        else if (izbor_utk == 8)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[14] << " vs " << klub[15];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - 0\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[14] < tim[15]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[15] < tim[14])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[14] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[15] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[14] << " vs " << klub[15] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[14] << " vs " << klub[15] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        else if (izbor_utk == 9)
+        {
+            cout << "Odabrali ste utakmicu: " << klub[16] << " vs " << klub[17];
+            cout << "\n";
+            cout << "Kladite se prema sljedecim oznakama:\n";
+            cout << "Pobjeda domaćina - 1\n";
+            cout << "Neriješen rezultat - 0\n";
+            cout << "Pobjeda gosta - 2\n";
+            cout << "\n";
+            cout << "Koeficijenti:\n";
+            if (tim[16] < tim[17]) // random koef
+            {
+                koef1Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            else if (tim[17] < tim[16])
+            {
+                koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
+            }
+            cout << "1\t" << klub[16] << ": " << setprecision(3) << koef1 << endl;
+            cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
+            cout << "2\t" << klub[17] << ": " << setprecision(3) << koef2 << endl;
+            cin >> kladjenje;
+            krivi_unos(kladjenje);
+            if (kladjenje == 1)
+                koef_ukupno += koef1;
+            else if (kladjenje == 0)
+                koef_ukupno += koef0;
+            else if (kladjenje == 2)
+                koef_ukupno += koef2;
+            utakmice.open("utakmice.txt", ios::app);
+            utakmice << klub[16] << " vs " << klub[17] << "\t" << "Vas odabir: " << kladjenje << endl;
+            utakmice.close();
+            fstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::out | ios::app);
+            odabrani_koef.write((char *)&kladjenje, sizeof(kladjenje));
+            odabrani_koef.close();
+            rezultat_tekmi.open("rezultat_tekmi.txt", ios::app);
+            rezultat_tekmi << klub[16] << " vs " << klub[17] << "\t" << endl;
+            rezultat_tekmi.close();
+        }
+        cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
+        cin >> nastavakKladenja;
+        int kolo_ili_liga;
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
+        {
+            cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
+            cin >> kolo_ili_liga;
+            if (kolo_ili_liga == 1)
+                goto ovo_koloL1;
+            else if (kolo_ili_liga == 2)
+                goto pocetak;
+        }
+        else
+            cout << endl;
     }   
         int gol1, gol2;
         double uplata, dobitak, profit;
