@@ -375,7 +375,7 @@ pocetak:
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -831,7 +831,7 @@ pocetak:
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -1294,7 +1294,7 @@ pocetak:
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -1343,7 +1343,7 @@ pocetak:
             timovi[tim1] = timovi[18];
             cout << "\tvs\t";
             tim2 = rand() % 19;
-            for (int i = 0; i < 200; i++)
+             for (int i = 0; i < 200; i++)
                 if (timovi[tim2] == "")
                 {
                     tim2 = rand() % 19;
@@ -1376,7 +1376,7 @@ pocetak:
             {
                 koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
             }
-            cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
+            cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl; //setprecision je funkcija za prikaz rezultata na (n) signifikantnih znamenki
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
             cin >> kladjenje;
@@ -1717,7 +1717,7 @@ pocetak:
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -2178,7 +2178,7 @@ pocetak:
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -2603,7 +2603,7 @@ pocetak:
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja != "Da" || nastavakKladenja != "da" || nastavakKladenja != "DA")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
