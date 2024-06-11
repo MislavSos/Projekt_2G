@@ -10,7 +10,7 @@ void krivi_unos(int kladjenje)
 {
     while (kladjenje > 2 || kladjenje < 0)
     {
-        cout << "Krivi unos, molimo unesite odgovarajuci broj." << endl;
+        cout << "Krivi unos." << endl;
         cin >> kladjenje;
     }
 }
@@ -92,6 +92,110 @@ void prolaznost(int kladjenje, int gol1, int gol2, T &prolaznost_para)
         }
     }
 }
+struct Korisnik
+{
+    char racun[50];
+    char lozinka[50];
+    double balance;
+};
+void unosNovogKorisnika()
+{
+    string racun, lozinka;
+    cout << "Unesite ime racuna: ";
+    getline(cin, racun);
+    cout << "Unesite lozinku: ";
+    getline(cin, lozinka);
+
+    Korisnik noviKorisnik;
+    strncpy(noviKorisnik.racun, racun.c_str(), sizeof(noviKorisnik.racun) - 1);
+    noviKorisnik.racun[sizeof(noviKorisnik.racun) - 1] = '\0'; // Osiguranje null-terminatora
+    strncpy(noviKorisnik.lozinka, lozinka.c_str(), sizeof(noviKorisnik.lozinka) - 1);
+    noviKorisnik.lozinka[sizeof(noviKorisnik.lozinka) - 1] = '\0'; // Osiguranje null-terminatora
+    noviKorisnik.balance = 10;                                     // Postavljanje početnog balansa na 10€
+
+    fstream korisnici("C:/Users/Mislav/Documents/GitHub/Projekt_2G/Datoteke/korisnici.bin", ios::binary | ios::out | ios::app);
+    if (!korisnici)
+    {
+        cerr << "Greška pri otvaranju datoteke!" << endl;
+        return;
+    }
+    korisnici.write(reinterpret_cast<char *>(&noviKorisnik), sizeof(Korisnik));
+    korisnici.close();
+
+    cout << "Novi korisnik uspješno dodan." << endl;
+    cout << "Ovo je vaš startni balance: 10€" << endl;
+}
+bool logIn(Korisnik &ulogiraniKorisnik, double profit, double izgubljenIznos, bool prolaznost_listica)
+{
+    string log_in_racun, log_in_lozinka;
+unos_korisnika:
+    cout << "Unesite ime racuna: ";
+    getline(cin, log_in_racun);
+    cout << "Unesite lozinku: ";
+    getline(cin, log_in_lozinka);
+
+    fstream korisnici("C:/Users/Mislav/Documents/GitHub/Projekt_2G/Datoteke/korisnici.bin", ios::binary | ios::in);
+    if (!korisnici)
+    {
+        cerr << "Greška pri otvaranju datoteke!" << endl;
+        return false;
+    }
+    Korisnik korisnik;
+    while (korisnici.read(reinterpret_cast<char *>(&korisnik), sizeof(Korisnik)))
+    {
+        if (log_in_racun == korisnik.racun && log_in_lozinka == korisnik.lozinka)
+        {
+            cout << "Uspješno ste ušli u Vaš račun." << endl;
+            ulogiraniKorisnik = korisnik;
+            if (prolaznost_listica == true)
+            {
+                korisnik.balance += profit;
+            }
+            else
+            {
+                korisnik.balance -= izgubljenIznos;
+            }
+            korisnici.close();
+            return true;
+        }
+    }
+    korisnici.close();
+    cout << "Neispravno korisničko ime ili lozinka." << endl;
+    goto unos_korisnika;
+    return false;
+}
+
+void azurirajBalance(Korisnik &ulogiraniKorisnik, double profit, double izgubljenIznos, bool prolaznost_listica)
+{
+    fstream korisnici("C:/Users/Mislav/Documents/GitHub/Projekt_2G/Datoteke/korisnici.bin", ios::binary | ios::in | ios::out);
+    if (!korisnici)
+    {
+        cerr << "Greška pri otvaranju datoteke!" << endl;
+        return;
+    }
+    Korisnik korisnik;
+    streampos pos;
+    while (korisnici.read(reinterpret_cast<char *>(&korisnik), sizeof(Korisnik)))
+    {
+        if (strcmp(korisnik.racun, ulogiraniKorisnik.racun) == 0 && strcmp(korisnik.lozinka, ulogiraniKorisnik.lozinka) == 0)
+        {
+            pos = korisnici.tellg();
+            if (prolaznost_listica == true)
+            {
+                korisnik.balance += profit;
+            }
+            else
+            {
+                korisnik.balance -= izgubljenIznos;
+            }
+            korisnici.seekp(pos - sizeof(Korisnik));
+            korisnici.write(reinterpret_cast<char *>(&korisnik), sizeof(Korisnik));
+            ulogiraniKorisnik.balance = korisnik.balance;
+            break;
+        }
+    }
+    korisnici.close();
+}
 
 int main()
 {
@@ -107,8 +211,28 @@ int main()
     int izbor, tablica[10][3];
     bool nastaviKladenje = true;
     string nastavakKladenja;
+    double profit = 0;
+    bool prolaznost_listica = true;
     cout << "Kladite se odgovorno!  18+" << endl;
     cout << "Cijena uplate je 50c." << endl;
+    cout << "LOG IN\t\t+NOVI KORISNIK" << endl;
+    int odabir;
+    cout << "Ukoliko se želite ulogirati u već postojeći račun unesite broj 1, a ako želite napraviti novi račun unesite broj 2." << endl;
+    cin >> odabir;
+    cin.ignore(); // Ignoriranje zaostalih znakova iz buffera
+    Korisnik ulogiraniKorisnik;
+    double izgubljenIznos;
+    if (odabir == 1)
+    {
+        if (logIn(ulogiraniKorisnik, profit, izgubljenIznos, prolaznost_listica))
+        {
+            cout << "Vaš balance je: " << ulogiraniKorisnik.balance << "€" << endl;
+        }
+    }
+    else if (odabir == 2)
+    {
+        unosNovogKorisnika();
+    }
 pocetak:
     cout << "Izaberite ligu pomocu broja." << endl;
     cout << "1. HNL" << endl;
@@ -367,15 +491,10 @@ pocetak:
             rezultat_tekmi << klub[8] << " vs " << klub[9] << "\t" << endl;
             rezultat_tekmi.close();
         }
-        else if (izbor_utk > 5 || izbor_utk < 1)
-        {
-            cout << "Pogresan unos, unesite odgovarajuci broj." << endl;
-            goto ovo_koloHNL;
-        }
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -823,15 +942,10 @@ pocetak:
             rezultat_tekmi << klub[18] << " vs " << klub[19] << "\t" << endl;
             rezultat_tekmi.close();
         }
-        else if (izbor_utk > 10 || izbor_utk < 1)
-        {
-            cout << "Pogresan unos, unesite odgovarajuci broj." << endl;
-            goto ovo_koloPL;
-        }
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -1286,15 +1400,10 @@ pocetak:
             rezultat_tekmi << klub[18] << " vs " << klub[19] << "\t" << endl;
             rezultat_tekmi.close();
         }
-        else if (izbor_utk > 10 || izbor_utk < 1)
-        {
-            cout << "Pogresan unos, unesite odgovarajuci broj." << endl;
-            goto ovo_koloLL;
-        }
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -1323,6 +1432,7 @@ pocetak:
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
         cout << endl; // printanje 10 random utakmica
         cout << "Utakmice ovog kola:" << endl;
+        // string *timovi = (string *)new string[19];
         string timovi[19] = {"Bayer 04 Leverkusen", "VfB Stuttgart", "FC Bayern Munchen", "RB Leipzig", "Borussia Dortmund", "Eintracht Frankfurt", "TSG Hoffenheim", "1. FC Heidenheim", "SV Werder Bremen", "SC Freiburg", "FC Augsburg", "VfL Wolfsburg", "1. FSV Mainz 05", "Borussia M'gladbach", "1. FC Union Berlin", "VfL Bochum 1848", "1. FC Koln", "Darmstadt 98", ""};
         string klub[19];
         srand(time(NULL));
@@ -1343,7 +1453,7 @@ pocetak:
             timovi[tim1] = timovi[18];
             cout << "\tvs\t";
             tim2 = rand() % 19;
-             for (int i = 0; i < 200; i++)
+            for (int i = 0; i < 200; i++)
                 if (timovi[tim2] == "")
                 {
                     tim2 = rand() % 19;
@@ -1352,7 +1462,7 @@ pocetak:
             tim[brojac] = tim2;
             brojac++;
             cout << timovi[tim2];
-            timovi[tim2] = timovi[19];
+            timovi[tim2] = timovi[18];
             cout << "\n";
         }
     ovo_koloBL:
@@ -1376,7 +1486,7 @@ pocetak:
             {
                 koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
             }
-            cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl; //setprecision je funkcija za prikaz rezultata na (n) signifikantnih znamenki
+            cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
             cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
             cin >> kladjenje;
@@ -1571,9 +1681,9 @@ pocetak:
             {
                 koef2Manji(koef0, koef_1, koef__1, koef1, koef_2, koef__2, koef2);
             }
-            cout << "1\t" << klub[0] << ": " << setprecision(3) << koef1 << endl;
+            cout << "1\t" << klub[10] << ": " << setprecision(3) << koef1 << endl;
             cout << "0\tIzjednaceno/nerjeseno: " << setprecision(3) << koef0 << endl;
-            cout << "2\t" << klub[1] << ": " << setprecision(3) << koef2 << endl;
+            cout << "2\t" << klub[11] << ": " << setprecision(3) << koef2 << endl;
             cin >> kladjenje;
             krivi_unos(kladjenje);
             if (kladjenje == 1)
@@ -1709,15 +1819,10 @@ pocetak:
             rezultat_tekmi << klub[16] << " vs " << klub[17] << "\t" << endl;
             rezultat_tekmi.close();
         }
-        else if (izbor_utk > 9 || izbor_utk < 1)
-        {
-            cout << "Pogresan unos, unesite odgovarajuci broj." << endl;
-            goto ovo_koloBL;
-        }
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -2170,15 +2275,10 @@ pocetak:
             rezultat_tekmi << klub[18] << " vs " << klub[19] << "\t" << endl;
             rezultat_tekmi.close();
         }
-        else if (izbor_utk > 10 || izbor_utk < 1)
-        {
-            cout << "Pogresan unos, unesite odgovarajuci broj." << endl;
-            goto ovo_koloSA;
-        }
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -2595,15 +2695,10 @@ pocetak:
             rezultat_tekmi << klub[16] << " vs " << klub[17] << "\t" << endl;
             rezultat_tekmi.close();
         }
-        else if (izbor_utk > 9 || izbor_utk < 1)
-        {
-            cout << "Pogresan unos, unesite odgovarajuci broj." << endl;
-            goto ovo_koloL1;
-        }
         cout << "Zelite li se nastaviti kladiti? Da/Ne" << endl;
         cin >> nastavakKladenja;
         int kolo_ili_liga;
-        if (nastavakKladenja == "Da" || nastavakKladenja == "da" || nastavakKladenja == "DA")
+        if (nastavakKladenja == "Da" || nastavakKladenja == "da")
         {
             cout << "Ako se zelite nastaviti kladiti na klubove u ovom kolu upisite 1, a ako se zelite nastaviti kladiti na klubove u drugim ligama upisite 2." << endl;
             cin >> kolo_ili_liga;
@@ -2615,14 +2710,9 @@ pocetak:
         else
             cout << endl;
     }
-    else if (izbor > 6 || izbor < 1)
-    {
-        cout << "Pogresan unos, unesite odgovarajuci broj." << endl;
-        goto pocetak;
-    }
     int gol1, gol2;
-    double uplata, dobitak, profit;
-    bool prolaznost_para = true, prolaznost_listica = true;
+    double uplata, dobitak;
+    bool prolaznost_para = true;
     cout << "Ovo je vas listic:" << endl;
     utakmice.open("utakmice.txt");
     while (getline(utakmice, ispis_tekmi))
@@ -2646,10 +2736,10 @@ pocetak:
     }
     rezultat_tekmi.close();
     odabrani_koef1.close();
+    dobitak = uplata * koef_ukupno;
+    profit = dobitak - uplata - 0.5;
     if (prolaznost_listica == true)
     {
-        dobitak = uplata * koef_ukupno;
-        profit = dobitak - uplata;
         cout << "Uplata: " << uplata << "€" << endl
              << "Dobitak: " << dobitak << "€" << endl
              << "Profit: " << profit << "€" << endl;
@@ -2657,7 +2747,9 @@ pocetak:
     else
     {
         cout << "Nazalost, listic Vam nije prosao." << endl;
+        izgubljenIznos = uplata + 0.5;
     }
+    azurirajBalance(ulogiraniKorisnik, profit, izgubljenIznos, prolaznost_listica);
     cout << "Hvala na kladenju!" << endl;
     ofstream odabrani_koef("odabrani_koef.bin", ios::binary | ios::trunc);
     odabrani_koef.close();
