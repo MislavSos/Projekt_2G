@@ -105,14 +105,12 @@ void unosNovogKorisnika()
     getline(cin, racun);
     cout << "Unesite lozinku: ";
     getline(cin, lozinka);
-
     Korisnik noviKorisnik;
     strncpy(noviKorisnik.racun, racun.c_str(), sizeof(noviKorisnik.racun) - 1);
-    noviKorisnik.racun[sizeof(noviKorisnik.racun) - 1] = '\0'; // Osiguranje null-terminatora
+    noviKorisnik.racun[sizeof(noviKorisnik.racun) - 1] = '\0'; 
     strncpy(noviKorisnik.lozinka, lozinka.c_str(), sizeof(noviKorisnik.lozinka) - 1);
-    noviKorisnik.lozinka[sizeof(noviKorisnik.lozinka) - 1] = '\0'; // Osiguranje null-terminatora
+    noviKorisnik.lozinka[sizeof(noviKorisnik.lozinka) - 1] = '\0'; 
     noviKorisnik.balance = 10;                                     // Postavljanje početnog balansa na 10€
-
     fstream korisnici("C:/Users/Mislav/Documents/GitHub/Projekt_2G/Datoteke/korisnici.bin", ios::binary | ios::out | ios::app);
     if (!korisnici)
     {
@@ -128,7 +126,7 @@ void unosNovogKorisnika()
 bool logIn(Korisnik &ulogiraniKorisnik, double profit, double izgubljenIznos, bool prolaznost_listica)
 {
     string log_in_racun, log_in_lozinka;
-unos_korisnika:
+    unos_korisnika:
     cout << "Unesite ime racuna: ";
     getline(cin, log_in_racun);
     cout << "Unesite lozinku: ";
@@ -233,7 +231,7 @@ int main()
     {
         unosNovogKorisnika();
     }
-pocetak:
+    pocetak:
     cout << "Izaberite ligu pomocu broja." << endl;
     cout << "1. HNL" << endl;
     cout << "2. Premier League" << endl;
@@ -2722,8 +2720,7 @@ pocetak:
     utakmice.close();
     cout << "Koliko uplacujete? ";
     cin >> uplata;
-    cout << endl
-         << "Ovo je listic poslije odigranih utakmica:" << endl;
+    cout << endl << "Ovo je listic poslije odigranih utakmica:" << endl;
     rezultat_tekmi.open("rezultat_tekmi.txt");
     fstream odabrani_koef1("odabrani_koef.bin", ios::binary | ios::in);
     while (getline(rezultat_tekmi, ispis_rezultata) && odabrani_koef1.read((char *)&kladjenje, sizeof(kladjenje)))
@@ -2740,14 +2737,12 @@ pocetak:
     profit = dobitak - uplata - 0.5;
     if (prolaznost_listica == true)
     {
-        cout << "Uplata: " << uplata << "€" << endl
-             << "Dobitak: " << dobitak << "€" << endl
-             << "Profit: " << profit << "€" << endl;
+        cout << "Uplata: " << uplata << "€" << endl<< "Dobitak: " << dobitak << "€" << endl << "Profit: " << profit << "€" << endl;
     }
     else
     {
-        cout << "Nazalost, listic Vam nije prosao." << endl;
         izgubljenIznos = uplata + 0.5;
+        cout << "Nazalost, listic Vam nije prosao." << endl;
     }
     azurirajBalance(ulogiraniKorisnik, profit, izgubljenIznos, prolaznost_listica);
     cout << "Hvala na kladenju!" << endl;
