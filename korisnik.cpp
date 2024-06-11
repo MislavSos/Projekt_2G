@@ -65,10 +65,10 @@ int main()
                  << lozinka << endl;
         korisnik.close();
     }
-    /*fstream balansi("C:/Users/Mislav/Documents/GitHub/Projekt_2G/Datoteke/balansi.bin", ios::binary | ios::out | ios::app);
+    fstream balansi("C:/Users/Mislav/Documents/GitHub/Projekt_2G/Datoteke/balansi.bin", ios::binary | ios::out | ios::app);
     balansi.write((char *)&balance, sizeof(balance));
-    balansi.close();*/
-    /*fstream balansi1("C:/Users/Mislav/Documents/GitHub/Projekt_2G/Datoteke/balansi.bin", ios::binary | ios::in);
+    balansi.close();
+    fstream balansi1("C:/Users/Mislav/Documents/GitHub/Projekt_2G/Datoteke/balansi.bin", ios::binary | ios::in);
     while (balansi1.read((char *)&balance, sizeof(balance)))
     {
         brojacc++;
@@ -90,8 +90,8 @@ int main()
             break;
         }
     }
-    balansi2.close();*/
-    ofstream balansi("balansi.bin", ios::binary | ios::trunc);
+    balansi2.close();
+    ofstream balansi3("balansi.bin", ios::binary | ios::trunc);
     balansi.close();
     return 0;
 }

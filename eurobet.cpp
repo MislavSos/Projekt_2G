@@ -134,8 +134,8 @@ pocetak:
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
         cout << endl; // printanje 5 random utakmica
         cout << "Utakmice ovog kola:" << endl;
-        char timovi[11][21] = {"GNK Dinamo Zagreb", "HNK Rijeka", "HNK Hajduk Split", "NK Osijek", "NK Lokomotiva Zagreb", "NK Varazdin", "HNK Gorica", "NK Istra 1961", "NK Slaven Belupo", "NK Rudes", ""};
-        char klub[11][21];
+        string timovi[11] = {"GNK Dinamo Zagreb", "HNK Rijeka", "HNK Hajduk Split", "NK Osijek", "NK Lokomotiva Zagreb", "NK Varazdin", "HNK Gorica", "NK Istra 1961", "NK Slaven Belupo", "NK Rudes", ""};
+        string klub[11];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[10];
         for (int i = 0; i < 5; i++)
@@ -143,23 +143,27 @@ pocetak:
             cout << i + 1 << ". ";
             tim1 = rand() % 11;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim1], "") == 0)
+                if (timovi[tim1] == "")
+                {
                     tim1 = rand() % 11;
-            strcpy(klub[brojac], timovi[tim1]);
+                }
+            klub[brojac] = timovi[tim1];
             tim[brojac] = tim1;
             brojac++;
             cout << timovi[tim1];
-            strcpy(timovi[tim1], timovi[10]);
+            timovi[tim1] = timovi[10];
             cout << "\tvs\t";
             tim2 = rand() % 11;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim2], "") == 0)
+                if (timovi[tim2] == "")
+                {
                     tim2 = rand() % 11;
-            strcpy(klub[brojac], timovi[tim2]);
+                }
+            klub[brojac] = timovi[tim2];
             tim[brojac] = tim2;
             brojac++;
             cout << timovi[tim2];
-            strcpy(timovi[tim2], timovi[10]);
+            timovi[tim2] = timovi[10];
             cout << "\n";
         }
         int izbor_utk, rand_rez;
@@ -389,8 +393,8 @@ pocetak:
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
         cout << endl; // printanje 10 random utakmica
         cout << "Utakmice ovog kola:" << endl;
-        char timovi[21][23] = {"Manchester City", "Arsenal", "Liverpool", "Aston Villa", "Tottenham Hotspur", "Chelsea", "Newcastle United", "Manchester United", "West Ham United", "Crystal Palace", "Brighton & Hove Albion", "Bournemouth", "Fulham", "Wolverhampton", "Everton", "Brentford", "Nottingham Forest", "Luton Town", "Burnley", "Sheffield United", ""};
-        char klub[21][23];
+        string timovi[21] = {"Manchester City", "Arsenal", "Liverpool", "Aston Villa", "Tottenham Hotspur", "Chelsea", "Newcastle United", "Manchester United", "West Ham United", "Crystal Palace", "Brighton & Hove Albion", "Bournemouth", "Fulham", "Wolverhampton", "Everton", "Brentford", "Nottingham Forest", "Luton Town", "Burnley", "Sheffield United", ""};
+        string klub[21];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[20];
         for (int i = 0; i < 10; i++)
@@ -398,23 +402,27 @@ pocetak:
             cout << i + 1 << ". ";
             tim1 = rand() % 21;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim1], "") == 0)
+                if (timovi[tim1] == "")
+                {
                     tim1 = rand() % 21;
-            strcpy(klub[brojac], timovi[tim1]);
+                }
+            klub[brojac] = timovi[tim1];
             tim[brojac] = tim1;
             brojac++;
             cout << timovi[tim1];
-            strcpy(timovi[tim1], timovi[20]);
+            timovi[tim1] = timovi[20];
             cout << "\tvs\t";
             tim2 = rand() % 21;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim2], "") == 0)
+                if (timovi[tim2] == "")
+                {
                     tim2 = rand() % 21;
-            strcpy(klub[brojac], timovi[tim2]);
+                }
+            klub[brojac] = timovi[tim2];
             tim[brojac] = tim2;
             brojac++;
             cout << timovi[tim2];
-            strcpy(timovi[tim2], timovi[20]);
+            timovi[tim2] = timovi[20];
             cout << "\n";
         }
         ovo_koloPL:
@@ -843,8 +851,8 @@ pocetak:
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
         cout << endl; // printanje 10 random utakmica
         cout << "Utakmice ovog kola:" << endl;
-        char timovi[21][17] = {"Real Madrid", "Barcelona", "Girona FC", "Atletico Madrid", "Athletic Club", "Real Sociedad", "Real Betis", "Villareal", "Valencia", "Deportivo Alaves", "Osasuna", "Getafe", "Celta Vigo", "Sevilla", "Mallorca", "Las Palmas", "Rayo Vallecano", "Cadiz", "Almeria", "Granada", ""};
-        char klub[21][17];
+        string timovi[21] = {"Real Madrid", "Barcelona", "Girona FC", "Atletico Madrid", "Athletic Club", "Real Sociedad", "Real Betis", "Villareal", "Valencia", "Deportivo Alaves", "Osasuna", "Getafe", "Celta Vigo", "Sevilla", "Mallorca", "Las Palmas", "Rayo Vallecano", "Cadiz", "Almeria", "Granada", ""};
+        string klub[21];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[20];
         for (int i = 0; i < 10; i++)
@@ -852,23 +860,27 @@ pocetak:
             cout << i + 1 << ". ";
             tim1 = rand() % 21;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim1], "") == 0)
+                if (timovi[tim1] == "")
+                {
                     tim1 = rand() % 21;
-            strcpy(klub[brojac], timovi[tim1]);
+                }
+            klub[brojac] = timovi[tim1];
             tim[brojac] = tim1;
             brojac++;
             cout << timovi[tim1];
-            strcpy(timovi[tim1], timovi[20]);
+            timovi[tim1] = timovi[20];
             cout << "\tvs\t";
             tim2 = rand() % 21;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim2], "") == 0)
+                if (timovi[tim2] == "")
+                {
                     tim2 = rand() % 21;
-            strcpy(klub[brojac], timovi[tim2]);
+                }
+            klub[brojac] = timovi[tim2];
             tim[brojac] = tim2;
             brojac++;
             cout << timovi[tim2];
-            strcpy(timovi[tim2], timovi[20]);
+            timovi[tim2] = timovi[20];
             cout << "\n";
         }
     ovo_koloLL:
@@ -1296,8 +1308,8 @@ pocetak:
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
         cout << endl; // printanje 10 random utakmica
         cout << "Utakmice ovog kola:" << endl;
-        char timovi[19][30] = {"Bayer 04 Leverkusen", "VfB Stuttgart", "FC Bayern Munchen", "RB Leipzig", "Borussia Dortmund", "Eintracht Frankfurt", "TSG Hoffenheim", "1. FC Heidenheim", "SV Werder Bremen", "SC Freiburg", "FC Augsburg", "VfL Wolfsburg", "1. FSV Mainz 05", "Borussia M'gladbach", "1. FC Union Berlin", "VfL Bochum 1848", "1. FC Koln", "Darmstadt 98", ""};
-        char klub[19][30];
+        string timovi[19] = {"Bayer 04 Leverkusen", "VfB Stuttgart", "FC Bayern Munchen", "RB Leipzig", "Borussia Dortmund", "Eintracht Frankfurt", "TSG Hoffenheim", "1. FC Heidenheim", "SV Werder Bremen", "SC Freiburg", "FC Augsburg", "VfL Wolfsburg", "1. FSV Mainz 05", "Borussia M'gladbach", "1. FC Union Berlin", "VfL Bochum 1848", "1. FC Koln", "Darmstadt 98", ""};
+        string klub[19];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[18];
         for (int i = 0; i < 9; i++)
@@ -1305,23 +1317,27 @@ pocetak:
             cout << i + 1 << ". ";
             tim1 = rand() % 19;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim1], "") == 0)
+                if (timovi[tim1] == "")
+                {
                     tim1 = rand() % 19;
-            strcpy(klub[brojac], timovi[tim1]);
+                }
+            klub[brojac] = timovi[tim1];
             tim[brojac] = tim1;
             brojac++;
             cout << timovi[tim1];
-            strcpy(timovi[tim1], timovi[18]);
+            timovi[tim1] = timovi[18];
             cout << "\tvs\t";
             tim2 = rand() % 19;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim2], "") == 0)
+                if (timovi[tim2] == "")
+                {
                     tim2 = rand() % 19;
-            strcpy(klub[brojac], timovi[tim2]);
+                }
+            klub[brojac] = timovi[tim2];
             tim[brojac] = tim2;
             brojac++;
             cout << timovi[tim2];
-            strcpy(timovi[tim2], timovi[18]);
+            timovi[tim2] = timovi[19];
             cout << "\n";
         }
     ovo_koloBL:
@@ -1709,8 +1725,8 @@ pocetak:
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
         cout << endl; // printanje 10 random utakmica
         cout << "Utakmice ovog kola:" << endl;
-        char timovi[21][14] = {"Inter", "Milan", "Juventus", "Atalanta", "Bologna", "Roma", "Lazio", "Fiorentina", "Torino", "Napoli", "Genoa", "Monza", "Hellas Verona", "Lecce", "Udinese", "Cagliari", "Empoli", "Frosinone", "Sassuolo", "Salernitana", ""};
-        char klub[21][14];
+        string timovi[21] = {"Inter", "Milan", "Juventus", "Atalanta", "Bologna", "Roma", "Lazio", "Fiorentina", "Torino", "Napoli", "Genoa", "Monza", "Hellas Verona", "Lecce", "Udinese", "Cagliari", "Empoli", "Frosinone", "Sassuolo", "Salernitana", ""};
+        string klub[21];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[20];
         for (int i = 0; i < 10; i++)
@@ -1718,23 +1734,27 @@ pocetak:
             cout << i + 1 << ". ";
             tim1 = rand() % 21;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim1], "") == 0)
+                if (timovi[tim1] == "")
+                {
                     tim1 = rand() % 21;
-            strcpy(klub[brojac], timovi[tim1]);
+                }
+            klub[brojac] = timovi[tim1];
             tim[brojac] = tim1;
             brojac++;
             cout << timovi[tim1];
-            strcpy(timovi[tim1], timovi[20]);
+            timovi[tim1] = timovi[20];
             cout << "\tvs\t";
             tim2 = rand() % 21;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim2], "") == 0)
+                if (timovi[tim2] == "")
+                {
                     tim2 = rand() % 21;
-            strcpy(klub[brojac], timovi[tim2]);
+                }
+            klub[brojac] = timovi[tim2];
             tim[brojac] = tim2;
             brojac++;
             cout << timovi[tim2];
-            strcpy(timovi[tim2], timovi[20]);
+            timovi[tim2] = timovi[20];
             cout << "\n";
         }
         ovo_koloSA:
@@ -2164,8 +2184,8 @@ pocetak:
             cout << i + 1 << ".\t" << momcadi[i] << "\t" << bodovi[i] << endl;
         cout << endl; // printanje 10 random utakmica
         cout << "Utakmice ovog kola:" << endl;
-        char timovi[19][30] = {"Paris Saint-Germain", "AS Monaco", "Stade Brestois", "Lille", "Nice", "Olympique Lyonnais", "RC Lens", "Olympique de Marseille", "Stade de Reims", "Stade Rennais", "Toulouse", "Montpellier", "RC Strasbourg", "Nantes", "Le Havre", "Metz", "Lorient", "Clermont Foot", ""};
-        char klub[19][30];
+        string timovi[19] = {"Paris Saint-Germain", "AS Monaco", "Stade Brestois", "Lille", "Nice", "Olympique Lyonnais", "RC Lens", "Olympique de Marseille", "Stade de Reims", "Stade Rennais", "Toulouse", "Montpellier", "RC Strasbourg", "Nantes", "Le Havre", "Metz", "Lorient", "Clermont Foot", ""};
+        string klub[19];
         srand(time(NULL));
         int tim1, tim2, brojac = 0, tim[18];
         for (int i = 0; i < 9; i++)
@@ -2173,23 +2193,27 @@ pocetak:
             cout << i + 1 << ". ";
             tim1 = rand() % 19;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim1], "") == 0)
+                if (timovi[tim1] == "")
+                {
                     tim1 = rand() % 19;
-            strcpy(klub[brojac], timovi[tim1]);
+                }
+            klub[brojac] = timovi[tim1];
             tim[brojac] = tim1;
             brojac++;
             cout << timovi[tim1];
-            strcpy(timovi[tim1], timovi[18]);
+            timovi[tim1] = timovi[18];
             cout << "\tvs\t";
             tim2 = rand() % 19;
             for (int i = 0; i < 200; i++)
-                if (strcmp(timovi[tim2], "") == 0)
+                if (timovi[tim2] == "")
+                {
                     tim2 = rand() % 19;
-            strcpy(klub[brojac], timovi[tim2]);
+                }
+            klub[brojac] = timovi[tim2];
             tim[brojac] = tim2;
             brojac++;
             cout << timovi[tim2];
-            strcpy(timovi[tim2], timovi[18]);
+            timovi[tim2] = timovi[18];
             cout << "\n";
         }
     ovo_koloL1:
